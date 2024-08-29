@@ -311,7 +311,7 @@ void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length)
     {
       ESP_LOGD("WS-msg", "Impedance command");
       ADS.SDATAC();
-      ADS.WREG(LOFF, 0x02);                             // set lead off 6nA and 31.2Hz
+      ADS.WREG(LOFF, 0x03);                             // set lead off 6nA and 31.2Hz
       ADS.WREG(LOFF_SENSP, 0xFF >> (8 - max_channels)); // set max channels to lead off
       ADS.RDATAC();
     }
